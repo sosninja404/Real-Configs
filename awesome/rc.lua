@@ -42,8 +42,8 @@ beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "gnome-terminal"
--- browser = "chromium"
-editor = os.getenv("EDITOR") or "nano"
+browser = "chromium"
+editor = vim
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -56,7 +56,7 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.floating,
+--    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -261,7 +261,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "d",     function () awful.util.spawn("dmenu_run") end),
     awful.key({ modkey, "Shift"   }, "s",     function () awful.util.spawn("steam")     end),
     awful.key({ modkey, "Control" }, "s",     function () awful.util.spawn("skype")     end),
-    awful.key({ modkey, "Shift"   }, "w",     function () awful.util.spawn("luakit")  	end),
+    awful.key({ modkey, "Shift"   }, "w",     function () awful.util.spawn("browser")  	end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
@@ -455,7 +455,7 @@ do
     "compton -Cgb",
     "pcmanfm -d",
     "nm-applet",
-    "node /home/josh/gitclone/about-blank/server.js",
+    "node /home/josh/.aboutblank/about-blank/server.js",
     "xscreensaver"
   }
 
